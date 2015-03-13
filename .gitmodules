@@ -1,0 +1,3 @@
+[submodule "docker-pandoc"]
+	path = docker-pandoc
+	url = git@github.com:ivotron/docker-pandoc.git
