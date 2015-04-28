@@ -155,65 +155,23 @@ The architecture of the system can be seen below (Figure 1).
 
 \subsection{The high-level features}\label{the-high-level-features}
 
-The article can also tables. And a table listing some things:
+The article can also include tables. A table might contain and be
+formatted in different ways (see Table 1).
 
-\begin{longtable}[c]{@{}clrl@{}}
+\begin{longtable}[c]{@{}lcr@{}}
 \caption{Here's the caption. It, too, may span multiple
 lines.}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.15\columnwidth}\centering\strut
-Centered Header
-\strut\end{minipage} &
-\begin{minipage}[b]{0.10\columnwidth}\raggedright\strut
-Default Aligned
-\strut\end{minipage} &
-\begin{minipage}[b]{0.20\columnwidth}\raggedleft\strut
-Right Aligned
-\strut\end{minipage} &
-\begin{minipage}[b]{0.31\columnwidth}\raggedright\strut
-Left Aligned
-\strut\end{minipage}\tabularnewline
+Left-Aligned & Center Aligned & Right Aligned\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.15\columnwidth}\centering\strut
-Centered Header
-\strut\end{minipage} &
-\begin{minipage}[b]{0.10\columnwidth}\raggedright\strut
-Default Aligned
-\strut\end{minipage} &
-\begin{minipage}[b]{0.20\columnwidth}\raggedleft\strut
-Right Aligned
-\strut\end{minipage} &
-\begin{minipage}[b]{0.31\columnwidth}\raggedright\strut
-Left Aligned
-\strut\end{minipage}\tabularnewline
+Left-Aligned & Center Aligned & Right Aligned\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.15\columnwidth}\centering\strut
-First
-\strut\end{minipage} &
-\begin{minipage}[t]{0.10\columnwidth}\raggedright\strut
-row
-\strut\end{minipage} &
-\begin{minipage}[t]{0.20\columnwidth}\raggedleft\strut
-12.0
-\strut\end{minipage} &
-\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
-Example of a row that spans multiple lines.
-\strut\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.15\columnwidth}\centering\strut
-Second
-\strut\end{minipage} &
-\begin{minipage}[t]{0.10\columnwidth}\raggedright\strut
-row
-\strut\end{minipage} &
-\begin{minipage}[t]{0.20\columnwidth}\raggedleft\strut
-5.0
-\strut\end{minipage} &
-\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
-Here's another one. Note the blank line between rows.
-\strut\end{minipage}\tabularnewline
+col 3 is & some wordy text & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+zebra stripes & are neat & \$1\tabularnewline
 \bottomrule
 \end{longtable}
 
