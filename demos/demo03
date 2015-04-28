@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# Similar to demo01 but formats the output using USENIX's style. Also:
+#   * Numbers sections
+#   * Substitutes links to URLs with footnotes
+#   * Converts cross-references using /autoref
+
+docker run \
+  --rm \
+  --workdir="/root" \
+  -v `pwd`/../vendor/pandoc-templates:/root/.pandoc/templates \
+  -v `pwd`/../vendor/latex-files:/root/texmf/tex/latex \
+  -v `pwd`/../vendor/bibtools/ieee.csl:/root/ieee.csl \
+  -v `pwd`/../vendor/bibfile/zotero.bib:/root/citations.bib \
+  -v `pwd`/../main.md:/root/main.md \
+  -v `pwd`/../figures:/root/figures \
+  -v `pwd`/out:/root/out \
+  ivotron/pandoc:1.13.2 \
+    --bibliography=citations.bib \
+    --csl=ieee.csl \
+    --highlight-style tango \
+    --metadata=usenix:true \
+    --metadata=geometry:margin=1in \
+    --metadata=numbersections:true \
+    --metadata=substitute-hyperref:true \
+    --metadata=twocolumn-longtable:true \
+    --metadata=links-as-notes:true \
+    --output=out/demo03.pdf main.md 2> build.log
+
+if [ $? != "0" ] ; then
+  echo "ERROR: check build.log for details"
+  exit 1
+fi
+
+echo "SUCCESS: check out/ folder for output"
+
+exit 0

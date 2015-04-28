@@ -17,17 +17,23 @@ The intro goes here. We can cite existing work [@lamport_time_1978]
 and some more [@gray_granularity_1976 ; @lampson_how_1996 ; 
 @stonebraker_readings_1988].
 
-# Background
+The article can also include [links to pages](http://wikipedia.org). 
+We can also refer to other sections, for example, [see\ ](#bg).
+
+# Background {#bg}
 
 Then some background so that people can understand
 
-# Details
+# Our System
 
-The architecture of the system:
+The architecture of the system can be seen below (Figure 1).
 
-![Our system is fairly simple.](figures/square.png)
+![Our system is fairly simple. It consists of a single 
+rectangle](figures/square.png)
 
-And a table listing some things:
+## The high-level features
+
+The article can also tables. And a table listing some things:
 
 -------------------------------------------------------------
  Centered   Default           Right Left
@@ -44,6 +50,8 @@ And a table listing some things:
 Table: Here's the caption. It, too, may span
 multiple lines.
 
+## The Details
+
 Then some details. With some cpp code:
 
 ```cpp
@@ -55,6 +63,11 @@ main()
     return 0;
 }
 ```
+
+We can also use footnotes[^footnote].
+
+[^footnote]: This footnote is for illustration purposes only, don't 
+take it too seriously.
 
 # Bibliography
 
