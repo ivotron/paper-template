@@ -3,8 +3,8 @@
 The goal of this project is to expedite the generation of academic 
 articles. [Pandoc](http://pandoc.org) is a _swiss army knife_ of 
 document generation, its main goal is to separate content from 
-presentation. [Docker](http://docker.io) solves the "dependency hell". 
-The two combined makes for a great productivity tool.
+presentation. [Docker](http://docker.io) solves the "dependency hell" 
+problem. The two combined makes for a great productivity tool.
 
 The `main.md` file is a very simple example of a format-agnostic 
 article. The `demos` folder contains a list of bash scripts that show 
