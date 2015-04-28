@@ -1,17 +1,19 @@
 #!/bin/bash
 #
-# basic build - uses default styles
+# Generate LaTeX source from markdown
 
 docker run \
   --rm \
   --workdir="/root" \
-  -v `pwd`/vendor/bibfile/zotero.bib:/root/citations.bib \
-  -v `pwd`/main.md:/root/main.md \
-  -v `pwd`/figures:/root/figures \
+  -v `pwd`/../vendor/bibfile/zotero.bib:/root/citations.bib \
+  -v `pwd`/../main.md:/root/main.md \
+  -v `pwd`/../figures:/root/figures \
   -v `pwd`/out:/root/out \
   ivotron/pandoc:1.13.2 \
+    --standalone \
+    --highlight-style tango \
     --bibliography=citations.bib \
-    --output=out/main.pdf main.md 2> build.log
+    --output=out/demo05.tex main.md 2> build.log
 
 if [ $? != "0" ] ; then
   echo "ERROR: check build.log for details"
@@ -21,3 +23,4 @@ fi
 echo "SUCCESS: check out/ folder for output"
 
 exit 0
+
