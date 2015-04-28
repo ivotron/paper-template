@@ -1,0 +1,267 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+    \usepackage{xltxtra,xunicode}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\ErrorTok}[1]{\textbf{{#1}}}
+\newcommand{\NormalTok}[1]{{#1}}
+
+
+\usepackage{longtable,booktabs}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\ifxetex
+  \usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \usepackage[unicode=true]{hyperref}
+\fi
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={},
+            pdftitle={An awesome paper on an amazing topic},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\setcounter{secnumdepth}{0}
+
+% a0poster {
+% }
+
+
+
+% title {
+  \title{An awesome paper on an amazing topic}
+      % }
+
+
+% authors {
+\author{
+                    Author1  (University of A1) 
+                       \and
+                    Author2  (A2 Institute of Technology) 
+                      }
+% }
+
+\date{}
+
+
+% letter {
+% }
+
+\begin{document}
+
+% a0poster {
+% }
+
+\maketitle
+
+% a0poster {
+% }
+
+\begin{abstract}
+There is the need for an awesome system, so we built one.
+\end{abstract}
+
+
+
+
+% a0poster {
+% }
+
+
+% letter {
+% }
+
+
+\section{Introduction}\label{introduction}
+
+The intro goes here. We can cite existing work (Lamport 1978) and some
+more (Gray et al. 1976 ; Lampson 1996 ; Stonebraker and Hellerstein
+1988).
+
+The article can also include \href{http://wikipedia.org}{links to
+pages}. We can also refer to other sections, for example,
+\hyperref[bg]{see~}.
+
+\hyperdef{}{bg}{\section{Background}\label{bg}}
+
+Then some background so that people can understand
+
+\section{Our System}\label{our-system}
+
+The architecture of the system can be seen below (Figure 1).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{figures/square.png}
+\caption{Our system is fairly simple. It consists of a single rectangle}
+\end{figure}
+
+\subsection{The high-level features}\label{the-high-level-features}
+
+The article can also tables. And a table listing some things:
+
+\begin{longtable}[c]{@{}clrl@{}}
+\caption{Here's the caption. It, too, may span multiple
+lines.}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.15\columnwidth}\centering\strut
+Centered Header
+\strut\end{minipage} &
+\begin{minipage}[b]{0.10\columnwidth}\raggedright\strut
+Default Aligned
+\strut\end{minipage} &
+\begin{minipage}[b]{0.20\columnwidth}\raggedleft\strut
+Right Aligned
+\strut\end{minipage} &
+\begin{minipage}[b]{0.31\columnwidth}\raggedright\strut
+Left Aligned
+\strut\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.15\columnwidth}\centering\strut
+Centered Header
+\strut\end{minipage} &
+\begin{minipage}[b]{0.10\columnwidth}\raggedright\strut
+Default Aligned
+\strut\end{minipage} &
+\begin{minipage}[b]{0.20\columnwidth}\raggedleft\strut
+Right Aligned
+\strut\end{minipage} &
+\begin{minipage}[b]{0.31\columnwidth}\raggedright\strut
+Left Aligned
+\strut\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.15\columnwidth}\centering\strut
+First
+\strut\end{minipage} &
+\begin{minipage}[t]{0.10\columnwidth}\raggedright\strut
+row
+\strut\end{minipage} &
+\begin{minipage}[t]{0.20\columnwidth}\raggedleft\strut
+12.0
+\strut\end{minipage} &
+\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
+Example of a row that spans multiple lines.
+\strut\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.15\columnwidth}\centering\strut
+Second
+\strut\end{minipage} &
+\begin{minipage}[t]{0.10\columnwidth}\raggedright\strut
+row
+\strut\end{minipage} &
+\begin{minipage}[t]{0.20\columnwidth}\raggedleft\strut
+5.0
+\strut\end{minipage} &
+\begin{minipage}[t]{0.31\columnwidth}\raggedright\strut
+Here's another one. Note the blank line between rows.
+\strut\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+\subsection{The Details}\label{the-details}
+
+Then some details. With some cpp code:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\OtherTok{#include <iostream.h>}
+
+\NormalTok{main()}
+\NormalTok{\{}
+    \NormalTok{cout << }\StringTok{"Hello World!"}\NormalTok{;}
+    \KeywordTok{return} \DecValTok{0}\NormalTok{;}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+We can also use footnotes\footnote{This footnote is for illustration
+  purposes only, don't take it too seriously.}.
+
+\section{Bibliography}\label{bibliography}
+
+\noindent
+\vspace{-2em} \setlength{\parindent}{-0.26in}
+\setlength{\leftskip}{0.2in} \setlength{\parskip}{8pt}
+
+Gray, Jim, Raymond A. Lorie, Gianfranco R. Putzolu, and Irving L.
+Traiger. 1976. ``Granularity of Locks and Degrees of Consistency in a
+Shared Data Base.'' In \emph{IFIP Working Conference on Modelling in
+Data Base Management Systems}, 365--94.
+
+Lamport, Leslie. 1978. ``Time, Clocks, and the Ordering of Events in a
+Distributed System.'' \emph{Commun. ACM} 21 (7): 558--65.
+doi:\href{http://dx.doi.org/10.1145/359545.359563}{10.1145/359545.359563}.
+
+Lampson, Butler W. 1996. ``How to Build a Highly Available System Using
+Consensus.'' In \emph{Distributed Algorithms}, edited by Özalp Babaoğlu
+and Keith Marzullo, 1--17. Lecture Notes in Computer Science 1151.
+Springer Berlin Heidelberg.
+
+Stonebraker, Michael, and Joseph M. Hellerstein. 1988. \emph{Readings in
+Database Systems}. Vol. 1. The MIT Press.
+
+% letter {
+% }
+
+% a0poster {
+% }
+\end{document}
