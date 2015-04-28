@@ -1,1 +1,3 @@
 out
+*.sw?
+build.log

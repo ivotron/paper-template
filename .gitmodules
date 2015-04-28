@@ -1,6 +1,15 @@
 [submodule "docker-pandoc"]
-	path = docker-pandoc
+	path = vendor/docker-pandoc
 	url = git@github.com:ivotron/docker-pandoc.git
 [submodule "pandoc-templates"]
-	path = pandoc-templates
+	path = vendor/pandoc-templates
 	url = git@github.com:ivotron/pandoc-templates.git
+[submodule "vendor/latex-files"]
+	path = vendor/latex-files
+	url = git@github.com:ivotron/latex-files
+[submodule "vendor/bibfile"]
+	path = vendor/bibfile
+	url = git@github.com:ivotron/bibfile
+[submodule "vendor/bibtools"]
+	path = vendor/bibtools
+	url = git@github.com:ivotron/bibtools
