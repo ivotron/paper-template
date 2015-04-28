@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Generate LaTeX source from markdown
+# Generate LaTeX source from markdown, then a PDF using pdflatex. This is useful 
+# for doing tweaks at the LaTeX level before generating a PDF.
 
 docker run \
   --rm \
@@ -20,7 +21,21 @@ if [ $? != "0" ] ; then
   exit 1
 fi
 
+docker run \
+  --rm \
+  --workdir="/root" \
+  --entrypoint="/usr/bin/pdflatex" \
+  -v `pwd`/../figures:/root/figures \
+  -v `pwd`/out/demo05.tex:/root/main.tex \
+  -v `pwd`/out:/root/out \
+  ivotron/pandoc:1.13.2 \
+    -output out/demo05.pdf main.tex 2> build.log
+
+if [ $? != "0" ] ; then
+  echo "ERROR: check build.log for details"
+  exit 1
+fi
+
 echo "SUCCESS: check out/ folder for output"
 
 exit 0
-

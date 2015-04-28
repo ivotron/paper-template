@@ -8,4 +8,4 @@ Below is an index of all demos.
   2. [ACM SIG alternate](demo02)
   3. [USENIX](demo03)
   4. [IEEE Transactions](demo04)
-  5. [Generate LaTeX source](demo05)
+  5. [Generate LaTeX source first, then a PDF](demo05)
