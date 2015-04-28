@@ -5,13 +5,13 @@
 docker run \
   --rm \
   --workdir="/root" \
-  -v `pwd`/vendor/bibfile/zotero.bib:/root/citations.bib \
-  -v `pwd`/main.md:/root/main.md \
-  -v `pwd`/figures:/root/figures \
+  -v `pwd`/../vendor/bibfile/zotero.bib:/root/citations.bib \
+  -v `pwd`/../main.md:/root/main.md \
+  -v `pwd`/../figures:/root/figures \
   -v `pwd`/out:/root/out \
   ivotron/pandoc:1.13.2 \
     --bibliography=citations.bib \
-    --output=out/main.pdf main.md 2> build.log
+    --output=out/demo00.pdf main.md 2> build.log
 
 if [ $? != "0" ] ; then
   echo "ERROR: check build.log for details"
