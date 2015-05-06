@@ -1,9 +1,10 @@
 #!/bin/bash
 #
-# Similar to demo01 but formats the output using USENIX's style. Also:
-#   * Numbers sections
-#   * Substitutes links to URLs with footnotes
-#   * Converts cross-references using /autoref
+# This passes templates for
+#   * LaTeX
+#   * code-highlighting (kate-highlighting builtin)
+#   * bibliography (CSL)
+#   * Pandoc
 
 docker run \
   --rm \
@@ -19,13 +20,7 @@ docker run \
     --bibliography=citations.bib \
     --csl=ieee.csl \
     --highlight-style tango \
-    --metadata=usenix:true \
-    --metadata=geometry:margin=1in \
-    --metadata=numbersections:true \
-    --metadata=substitute-hyperref:true \
-    --metadata=twocolumn-longtable:true \
-    --metadata=links-as-notes:true \
-    --output=out/demo03.pdf main.md 2> build.log
+    --output=out/demo02.pdf main.md 2> build.log
 
 if [ $? != "0" ] ; then
   echo "ERROR: check build.log for details"

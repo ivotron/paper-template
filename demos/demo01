@@ -1,25 +1,16 @@
 #!/bin/bash
 #
-# This passes templates for
-#   * LaTeX
-#   * code-highlighting (kate-highlighting builtin)
-#   * bibliography (CSL)
-#   * Pandoc
+# basic build - uses default styles
 
 docker run \
   --rm \
   --workdir="/root" \
-  -v `pwd`/../vendor/pandoc-templates:/root/.pandoc/templates \
-  -v `pwd`/../vendor/latex-files:/root/texmf/tex/latex \
-  -v `pwd`/../vendor/bibtools/ieee.csl:/root/ieee.csl \
   -v `pwd`/../vendor/bibfile/zotero.bib:/root/citations.bib \
   -v `pwd`/../main.md:/root/main.md \
   -v `pwd`/../figures:/root/figures \
   -v `pwd`/out:/root/out \
   ivotron/pandoc:1.13.2 \
     --bibliography=citations.bib \
-    --csl=ieee.csl \
-    --highlight-style tango \
     --output=out/demo01.pdf main.md 2> build.log
 
 if [ $? != "0" ] ; then
