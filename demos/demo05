@@ -1,10 +1,12 @@
 #!/bin/bash
 #
-# Similar to demo01 but formats the output using USENIX's style. Also:
+# Similar to demo01 but formats the output using IEEE's journal style. Also:
 #   * Numbers sections
 #   * Substitutes links to URLs with footnotes
 #   * Converts cross-references using /autoref
 #   * Fixes longtable so it can be used in two-column environment
+#   * Selects 'Times' as the font family
+#   * Passes 'conference' class option
 
 docker run \
   --rm \
@@ -20,13 +22,15 @@ docker run \
     --bibliography=citations.bib \
     --csl=ieee.csl \
     --highlight-style tango \
-    --metadata=usenix:true \
-    --metadata=geometry:margin=1in \
+    --metadata=documentclass:ieeetran \
+    --metadata=ieeetran:true \
+    --metadata=classoption:conference \
+    --metadata=fontfamily:times \
     --metadata=numbersections:true \
     --metadata=substitute-hyperref:true \
     --metadata=twocolumn-longtable:true \
     --metadata=links-as-notes:true \
-    --output=out/demo04.pdf main.md 2> build.log
+    --output=out/demo05.pdf main.md 2> build.log
 
 if [ $? != "0" ] ; then
   echo "ERROR: check build.log for details"
@@ -36,3 +40,4 @@ fi
 echo "SUCCESS: check out/ folder for output"
 
 exit 0
+
